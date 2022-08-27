@@ -1,6 +1,21 @@
-# React Native Typescript Starter
+<div align="center"><h1>React Native Typescript Starter</h1></div> 
 
-This is a starter project along with boilerplate code which aims to create scalable, robust and enterprise level React Native Typescript applications 🚀
+<div align="center"><p1 align="center">This is a starter project along with boilerplate code which aims to create scalable, robust and enterprise level React Native Typescript applications 🚀</p1></div>
+
+
+## Table of contents
+
+*  [What is in it?](#what-is-in-it)
+*  [Packages](#packages-)
+*  [Running e2e tests 🤖](#running-e2e-test-)
+*  [Storybook usage 📙](#storybook-usage-)
+*  [Path resolver](#path-resolver)
+*  [Folder structure](#folder-structure)
+*  [Usage](#usage)
+*  [Screenshots](#screenshots)
+*  [Contributing](#contributing)
+*  [License](#license)
+
 
 ## What is in it?
 
@@ -36,7 +51,7 @@ This is a starter project along with boilerplate code which aims to create scala
 - It is significant to write a good commit message, especially when you are collaborating with a team or a developer. Here comes [Commitlint](https://github.com/conventional-changelog/commitlint). It is initialized with the base config!
 - There might be specific scenarios that some actions might need to be executed before committing or pushing the code. [Husky ⚓️](https://github.com/typicode/husky) will take the responsibility for improving the commits along with commitlint. [Husky](https://github.com/typicode/husky) with [commitlint](https://github.com/conventional-changelog/commitlint) is 💣.
 
-## Packages
+## Packages 🎉
 
 - [React Navigation v6](https://reactnavigation.org/): Start quickly with built-in navigators that deliver a seamless out-of-the-box experience.
 - [React Navigation Bottom Tabs v6](https://reactnavigation.org/docs/bottom-tab-navigator/): A simple tab bar on the bottom of the screen that lets you switch between different routes.
@@ -51,6 +66,44 @@ This is a starter project along with boilerplate code which aims to create scala
 - [React Native Clean Project](https://github.com/pmadruga/react-native-clean-project): Automating the clean up of a React Native project.
 - [React Native Storybook](https://github.com/storybookjs/react-native): With Storybook for React Native you can design and develop individual React Native components without running your app.
 - [React Native Utils](https://github.com/tarikpnr/react-native-utils): Utility functions for react native projects.
+
+
+
+## Running e2e test 🤖
+
+There is an already initial setup for e2e test in the project. Make sure you run the build script for detox beforehand, then simply executing `detox test` will have the following result.
+
+<img src="./screenshots/detox-first-test.gif"/>
+
+<details><summary>Code</summary>
+
+```js
+const { reloadApp } = require("./reload");
+
+describe("Example", () => {
+  beforeEach(async () => {
+    await reloadApp();
+  });
+
+  it("should have welcome screen", async () => {
+    await expect(element(by.id("WelcomeScreen"))).toBeVisible();
+  });
+
+  it("should tap the button and counter should be increased by one", async () => {
+    await element(by.id("tap-me")).tap();
+    await expect(element(by.id("counter"))).toHaveText("1");
+  });
+});
+```
+
+</details>
+
+## Storybook usage 📙
+
+Toggle between storybook and app seamlessly!
+
+<img src="./screenshots/storybook-usage.gif"/>
+
 
 ## Path resolver
 Nested folders can be seen more frequently if the project gets larger by the time goes on.
@@ -197,6 +250,46 @@ git clone https://github.com/tarikpnr/react-native-typescript-starter.git
 ```
 
 - [react-native-rename](https://github.com/junedomingo/react-native-rename) for renaming project to the desired one.
+
+
+
+## Example apps
+
+- [React Native N64 Voter App](https://github.com/tarikpnr/react-native-n64-voter-app)
+
+
+
+
+
+
+
+
+
+## Screenshots
+
+<table>
+  <tr>
+ 
+  </tr>
+  <tr>
+    <td><img src="./screenshots/app-home-screen.png"></td>
+    <td><img src="screenshots/app-profile-screen.png"></td>
+    <td><img src="screenshots/storybook-banner-knobs.png"></td>
+  </tr>
+    <tr>
+    <td><img src="./screenshots/storybook-banner.png"></td>
+    <td><img src="screenshots/storybook-button-knobs.png"></td>
+    <td><img src="screenshots/storybook-button.png"></td>
+  </tr>
+    <tr>
+    <td><img src="./screenshots/storybook-navigator.png"></td>
+    <td><img src="screenshots/storybook-main-screen.png"></td>
+  </tr>
+ </table>
+ 
+## Contributing
+
+The main purpose of this library is to provide a highly scalable, robust and bug-free react native project. Contributors are always highly appreciated to keep this library maintained and enhance it more.
 
 ## License
 
